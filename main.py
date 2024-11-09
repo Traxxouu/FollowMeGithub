@@ -1,10 +1,10 @@
 import requests
 
-#A remplacer
-GITHUB_TOKEN = 'votre_token'
+# Remplacez par votre token personnel GitHub
+GITHUB_TOKEN = 'votre-token'
 
 def get_github_data(endpoint):
-    headers = {'sAuthorization': f'token {GITHUB_TOKEN}'}
+    headers = {'Authorization': f'token {GITHUB_TOKEN}'}
     response = requests.get(f'https://api.github.com{endpoint}', headers=headers)
     response.raise_for_status()
     return response.json()
